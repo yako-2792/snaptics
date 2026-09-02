@@ -2,6 +2,8 @@ import os
 import time
 import json
 import flet as ft
+import tempfile
+from PIL import Image
 from src.resources.utils.routines_controller import Routines
 from src.resources.controls.custom.header_control import HeaderControl
 from src.resources.properties import Properties as Props
@@ -276,6 +278,7 @@ class RoutinesTab(ft.Tab):
         # Reset current routine
         Props.CURRENT_ROUTINE["name"] = routine_name
 
+
         loading_dialog = LoadingDialog(page=Props.PAGE, title="Espera")
         loading_dialog.show()
         loading_dialog.update_legend(f"Aplicando rutina: {routine_name}")
@@ -485,6 +488,7 @@ class RoutinesTab(ft.Tab):
     def __start_routine_button_clicked(self, e):
         
         print("Boton de empezar rutina clickeado")
+        self.progress_bar.title = f"Rutina: {Props.CURRENT_ROUTINE['name']}"
 
         if Props.CURRENT_ROUTINE["stages"] == []:
             self.show_alert("Por favor, añade al menos una etapa.")
@@ -618,23 +622,6 @@ class RoutinesTab(ft.Tab):
             case "5 [DEG/SHOT]":
                 n = 72
                 for i in range(0,n):
-                    
-                    # Prefix
-                    match i:
-                        case 8:
-                            Props.LETTER_PREFIX = "A"
-                        case 17:
-                            Props.LETTER_PREFIX = "B"
-                        case 71:
-                            Props.LETTER_PREFIX = "C"
-                        case 35:
-                            Props.LETTER_PREFIX = "D"
-                        case 53:
-                            Props.LETTER_PREFIX = "E"
-                        case _:
-                            Props.LETTER_PREFIX = ""
-
-
                     self.motor.move_degs(5)
                     self.trigger_capture(iteration_number = i)
                     self.progress_bar.update_legend(new_legend=f"Scan: Serie actual: {i + 1}, restante {n - i - 1}")
@@ -642,22 +629,6 @@ class RoutinesTab(ft.Tab):
             case "45 [DEG/SHOT]":
                 n = 8
                 for i in range(0,n):
-
-                    # Prefix
-                    match i:
-                        case 0:
-                            Props.LETTER_PREFIX = "A"
-                        case 1:
-                            Props.LETTER_PREFIX = "B"
-                        case 7:
-                            Props.LETTER_PREFIX = "C"
-                        case 3:
-                            Props.LETTER_PREFIX = "D"
-                        case 5:
-                            Props.LETTER_PREFIX = "E"
-                        case _:
-                            Props.LETTER_PREFIX = ""
-
                     self.motor.move_degs(45)
                     self.trigger_capture(iteration_number = i)
                     self.progress_bar.update_legend(new_legend=f"Scan: Serie actual: {i + 1}, restante {n - i - 1}")
@@ -665,20 +636,6 @@ class RoutinesTab(ft.Tab):
             case "90 [DEG/SHOT]":
                 n = 4
                 for i in range(0,n):
-
-                    # Prefix
-                    match i:
-                        case 0:
-                            Props.LETTER_PREFIX = "B"
-                        case 3:
-                            Props.LETTER_PREFIX = "C"
-                        case 1:
-                            Props.LETTER_PREFIX = "D"
-                        case 2:
-                            Props.LETTER_PREFIX = "E"
-                        case _:
-                            Props.LETTER_PREFIX = ""
-                    
                     self.motor.move_degs(90)
                     self.trigger_capture(iteration_number = i)
                     self.progress_bar.update_legend(new_legend=f"Scan: Serie actual: {i + 1}, restante {n - i - 1}")
@@ -846,11 +803,32 @@ class RoutinesTab(ft.Tab):
                 Props.USE_PATH += '/'
                 
             print(f"Remote file path: {Props.USE_PATH + '/' + Props.PRODUCT_ID + '/' + file_name}")
+            
 
+            # EXPORT TO PNG
+            name, ext = os.path.splitext(file_name)
+            png_file_name = name + ".png"
             Save.post_file_in_remote(
                 local_file_path=image_file_path,
-                remote_file_path=Props.USE_PATH + '/' + Props.PRODUCT_ID + '/' + file_name
+                remote_file_path=Props.USE_PATH + '/' + Props.PRODUCT_ID + '_PNG/' + png_file_name
             )
+
+            # EXPORT TO JPG
+            # Convertir png a jpg
+            jpg_file_name = name + ".jpg"
+            jpg_file_path = os.path.join(tempfile.gettempdir(), jpg_file_name)
+
+            with Image.open(image_file_path) as img:
+                img.convert('RGB').save(jpg_file_path, 'JPEG', quality = 100, subsampling=0)
+
+
+            Save.post_file_in_remote(
+                local_file_path=jpg_file_path,
+                remote_file_path=Props.USE_PATH + '/' + Props.PRODUCT_ID + '_JPG/' + jpg_file_name
+            )
+
+            os.remove(jpg_file_path)
+
 
         self.progress_bar.update_legend(new_legend=f"Save: Proceso de guardado de imagen completado.")
     
@@ -891,31 +869,28 @@ class RoutinesTab(ft.Tab):
 
     def trigger_capture(self, iteration_number: int) -> None:
         if Props.CURRENT_USE_CAMERA1:
-            local_prefix = "" if Props.LETTER_PREFIX in ("A","F") else Props.LETTER_PREFIX
             gphoto2.capture_image(
                 camera_port = Props.CAMERAS_DICT[Props.CAMERAS_LIST[0]],
                 download_path = Props.CAMERA1_DOWNLOAD_PATH,
-                file_name = Props.PRODUCT_ID + str(iteration_number) + local_prefix + Props.CURRENT_FILE_EXTENSION
+                file_name = Props.PRODUCT_ID + "_" + str(iteration_number) + "A" + Props.CURRENT_FILE_EXTENSION
             )
 
             time.sleep(0.25)
 
         if Props.CURRENT_USE_CAMERA2:
-            local_prefix = "A" if Props.LETTER_PREFIX == "A" else ""
             gphoto2.capture_image(
                 camera_port = Props.CAMERAS_DICT[Props.CAMERAS_LIST[1]],
                 download_path = Props.CAMERA2_DOWNLOAD_PATH,
-                file_name = Props.PRODUCT_ID + str(iteration_number) + local_prefix + Props.CURRENT_FILE_EXTENSION
+                file_name = Props.PRODUCT_ID + "_" + str(iteration_number) + "B" + Props.CURRENT_FILE_EXTENSION
             )
 
             time.sleep(0.25)
 
         if Props.CURRENT_USE_CAMERA3:
-            local_prefix = "F" if Props.LETTER_PREFIX == "C" else ""
             gphoto2.capture_image(
                 camera_port = Props.CAMERAS_DICT[Props.CAMERAS_LIST[2]],
                 download_path = Props.CAMERA3_DOWNLOAD_PATH,
-                file_name = Props.PRODUCT_ID + str(iteration_number) + local_prefix + Props.CURRENT_FILE_EXTENSION
+                file_name = Props.PRODUCT_ID + "_" + str(iteration_number) + "C" + Props.CURRENT_FILE_EXTENSION
             )
 
             time.sleep(0.25)

@@ -104,9 +104,9 @@ if __name__ == "__main__":
     conn = conectar()
     shares = conn.listShares()
     names = [share.name for share in shares]
-    print("Recursos SMB disponibles:")
-    for name in names:
-        print(f"→ {name}")
+#    print("Recursos SMB disponibles:")
+#    for name in names:
+#        print(f"→ {name}")
 
     print("\n\nContenido en directorio remoto antes.")
     listar_contenido_remoto(conn, f"{BASE}/{PRODUCT_ID}")
@@ -124,14 +124,14 @@ if __name__ == "__main__":
     # # DELETE
     # # Borrar un archivo
     # # borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/test.txt")
-    borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST0B.png")
-    borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST1D.png")
-    borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST2E.png")
-    borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST3C.png")
-    borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/Thumbs.db")
+    # borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST0B.png")
+    # borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST1D.png")
+    # borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST2E.png")
+    # borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/NEW_TEST3C.png")
+    # borrar_archivo(conn, f"{BASE}/{PRODUCT_ID}/Thumbs.db")
 
     # # Borrar una carpeta completa
-    borrar_directorio(conn, f"{BASE}/{PRODUCT_ID}")
+    # borrar_directorio(conn, f"{BASE}/{PRODUCT_ID}")
 
     print("\n\nContenido en directorio remoto final.")
     listar_contenido_remoto(conn, f"{BASE}/{PRODUCT_ID}")

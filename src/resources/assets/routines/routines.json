@@ -1,23 +1,12 @@
 {
     "routines": [
         {
-            "name": "ZATO",
+            "name": "ExampleRutina",
             "stages": [
                 {
                     "type": "Scan",
                     "config": {
-                        "preset_name": "preset_test"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "ZATO1",
-            "stages": [
-                {
-                    "type": "Scan",
-                    "config": {
-                        "preset_name": "preset_test"
+                        "preset_name": "CONFIG1"
                     }
                 },
                 {
@@ -29,15 +18,28 @@
                 {
                     "type": "Save",
                     "config": {
-                        "server_name": "MARCO",
-                        "server_ip": "192.198.3.65",
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
                         "server_port": "22",
-                        "path": "/Multimedia y Dise\u00f1o/MartinPSD1/360",
+                        "path": "/Resources/360",
                         "credentials": {
-                            "user": "marco.delatorre",
-                            "password": "gAAAAABolM8CP-UXZfgYc5BJSsTcV-cTd9ZiBB5wyFFgfpsM5bkYaUZ9CUANdPWfawxSmJ-bZOEoqzA61Gnk8UIWcspsI57LAw=="
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
                         }
                     }
+                }
+            ]
+        },
+        {
+            "name": "Alternador",
+            "stages": []
+        },
+        {
+            "name": "DIRECCIONAL",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {}
                 },
                 {
                     "type": "Filter",
@@ -49,20 +51,20 @@
                 {
                     "type": "Save",
                     "config": {
-                        "server_name": "MARCO",
-                        "server_ip": "192.198.3.65",
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
                         "server_port": "22",
-                        "path": "/Multimedia y Dise\u00f1o/MartinPSD1/360",
+                        "path": "/Resources/360",
                         "credentials": {
-                            "user": "marco.delatorre",
-                            "password": "gAAAAABolM8CP-UXZfgYc5BJSsTcV-cTd9ZiBB5wyFFgfpsM5bkYaUZ9CUANdPWfawxSmJ-bZOEoqzA61Gnk8UIWcspsI57LAw=="
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
                         }
                     }
                 }
             ]
         },
         {
-            "name": "ExampleRutina",
+            "name": "BOMBAS",
             "stages": [
                 {
                     "type": "Scan",
@@ -82,6 +84,600 @@
                     "config": {
                         "server_name": "Fotos Speed 07",
                         "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DesarmadorJules",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "DESARMADORES"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Interruptores",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Interruptores1"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Cuerpos de Aceleracion",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Cuerpos de Aceleracion"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Amortiguador",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Amortiguador"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Conectores",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Conectores"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Plafones",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Plafones"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Impulsor",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "cuerpo aceleracion1"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Aceites",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "ACEITES"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "CONECTORES",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "cuerpo aceleracion1"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360"
+                    }
+                },
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Conector"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Alternador1",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Alternadores"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "192.168.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Alternadores",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "Alternadores"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "MICAS",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "MICAS"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {}
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "LPosicion",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "LPosicion"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "MARCHAS",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "BOMBAS"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                },
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "MARCHAS"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "PNG Server",
+                        "server_ip": "192.168.3.65",
+                        "server_port": "22",
+                        "path": ""
+                    }
+                }
+            ]
+        },
+        {
+            "name": "BATERIAS",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "BATERIAS"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Large"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "INYECTORES",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "INYECTORES"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "pign2",
+                            "password": "gAAAAABoXeVOsVbQkbGW2jScgLU2Y01yNZCCxizp3iJKebU_M6LyVmkYM5JRutPBiNX46wQOaQMo4ODaelCWTsJKHha4FvqiqA=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "PRUEBA RAPIDA",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "CONFIG1"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
+                        "server_port": "22",
+                        "path": "/Resources/360",
+                        "credentials": {
+                            "user": "marco.delatorre",
+                            "password": "gAAAAABpGLqQPqhGkJYO5cJjvtYr7qnKYP9qzuAlKt1BF7qCZXpTukYmkJPhIDz1Jsn3mdFWzTw3cu3eC8KzowlJ75qAuuJ7zw=="
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ACEITES",
+            "stages": [
+                {
+                    "type": "Scan",
+                    "config": {
+                        "preset_name": "ACEITES"
+                    }
+                },
+                {
+                    "type": "Filter",
+                    "config": {
+                        "filter_name": "Crop Center",
+                        "resolution": "Medium"
+                    }
+                },
+                {
+                    "type": "Save",
+                    "config": {
+                        "server_name": "Fotos Speed 07",
+                        "server_ip": "172.20.0.221",
                         "server_port": "22",
                         "path": "/Resources/360",
                         "credentials": {

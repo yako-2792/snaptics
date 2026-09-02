@@ -10,7 +10,7 @@
         },
         {
             "displayName": "Fotos Speed 07",
-            "hostName": "192.168.0.221",
+            "hostName": "172.20.0.221",
             "paths": [
                 "/Resources/FotosSpeed",
                 "/Resources/360"

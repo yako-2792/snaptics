@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import flet as ft
 from src.resources.controls.custom.header_control import HeaderControl
@@ -78,7 +79,9 @@ class StageScan(ft.Container):
         }
 
     def __product_id_changed(self, e):
-        Props.PRODUCT_ID = self.product_code_input.value
+        raw_value = self.product_code_input.value
+        clean_value = re.sub(r'[<>:"/\\|?*\'"\s]', '', raw_value)
+        Props.PRODUCT_ID = clean_value
         
     def __delete_button_clicked(self, e):
         self.card_list.content.controls.remove(self)

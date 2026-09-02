@@ -40,7 +40,8 @@ class Save:
 
     @staticmethod
     def post_file_in_remote(local_file_path: str, remote_file_path: str):
-
+        
+        # Establecemos conexion con el server
         conn = Save.connect(
             user=Props.USE_USER,
             password=Credentials.decrypt_password(Props.USE_PASSWORD),
@@ -48,13 +49,12 @@ class Save:
             server_ip=Props.USE_IP
         )
 
-        # Split on resource and file path
+        # Obtenemos la carpeta resourece
         split_result = remote_file_path.lstrip('/').split('/', 1)
-
-        # Asignar partes
         resource = split_result[0]
         print(f"Resource detectado: {resource}")
 
+        # 
         file_path = '/' + split_result[1] if len(split_result) > 1 else '/'
         print(f"File path detectado: {file_path}")
 

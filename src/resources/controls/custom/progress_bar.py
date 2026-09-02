@@ -6,7 +6,7 @@ from src.resources.controls.custom.header_control import HeaderControl
 class ProgressBar:
     def __init__(self, page: ft.Page, title: str):
         self.page = page
-        self.title = HeaderControl(title)
+        self.title = title
         self.progress_bar = ft.ProgressBar(
             value=0,
             width=Props.STAGE_CARD_WIDTH
@@ -44,7 +44,7 @@ class ProgressBar:
             content=ft.Container(
                 content=ft.Column(
                     controls=[
-                        self.title,
+                        HeaderControl(title),
                         ft.Row(
                             [
                                 self.progress_bar,
